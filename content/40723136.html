@@ -154,50 +154,11 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep<br /><h1>Webots Tutorial</h1>
-<p>Tutorial 1.</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/K14XjTF2Dtg" width="560"></iframe></p>
-<p><span>機器人以其最大速度移動一段時間，然後在輪子旋轉10弧度後停止</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-# create the Robot instance.
-robot = Robot()
-
-# get the motor devices
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-# set the target position of the motors
-leftMotor.setPosition(10.0)
-rightMotor.setPosition(10.0)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<p><span>輪子將以每秒1弧度的速度旋轉</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-MAX_SPEED = 6.28
-
-# create the Robot instance.
-robot = Robot()
-
-# get a handler to the motors and set target position to infinity (speed control)
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-leftMotor.setPosition(float('inf'))
-rightMotor.setPosition(float('inf'))
-
-# set up the motor speeds at 10% of the MAX_SPEED.
-leftMotor.setVelocity(0.1 * MAX_SPEED)
-rightMotor.setVelocity(0.1 * MAX_SPEED)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<div><span></span></div>
-<br />Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep</div>
+    <div id="tipue_search_content">40723112 << <a href='40723112.html'>Previous</a> <a href='40723148.html'>Next</a> >> 40723148<br /><h1>40723136</h1>
+<p>Solution: World File<br/>解決方案：世界文件<br/>To compare your world with the solution,<br/>為了將您的世界與解決方案進行比較，<br/>go to your files and find the folder named "my_first_simulation" created in Tutorial 1,<br/>轉到文件，找到在教程1中創建的名為“ my_first_simulation”的文件夾<br/>then go to the "worlds" folder and open with a text editor the right world.<br/>然後轉到“世界”文件夾，並使用文本編輯器打開正確的世界。<br/>This solution as the others is located in the solution directory.<br/>與其他解決方案一樣，該解決方案位於解決方案目錄中。</p>
+<p><img alt="" height="843" src="./../images/tutorial_walls.png" width="1482"/></p>
+<p>Efficiency /  效率<br/>The simulation of rigid bodies is computationally expensive.<br/>剛體的模擬在計算上是昂貴的。<br/>The simulation speed can be increased by minimizing the number of bounding objects,<br/>通過最小化邊界對象的數量可以提高仿真速度，<br/>minimizing the constraints between them (more information about the constraints in the next tutorials),<br/>使它們之間的約束最小化（有關下一個約束的更多信息），<br/>and maximizing the WorldInfo.basicTimeStep field.<br/>並最大化WorldInfo.basicTimeStep字段。<br/>On each simulation,<br/>在每次模擬中<br/>a trade-off has to be found between simulation speed and realism.<br/>必須在仿真速度和真實性之間找到一個權衡。</p>
+<p>Conclusion<br/>結論<br/>At the end of this tutorial,<br/>在本教程的最後，<br/>you are able to create simple environments based on rigid bodies.<br/>您能夠基於剛體創建簡單的環境。<br/>You are able to add nodes from the scene tree view and to modify their fields.<br/>您可以從場景樹視圖添加節點並修改其字段。<br/>You have become acquainted with the Solid,Physics, Shape, Sphere and Box nodes.<br/>您已經熟悉了實體，物理，形狀，球體和盒子節點。<br/>You also saw the DEF-USE mechanism that allows to reduce node redundancy of the scene tree.<br/>您還看到了DEF-USE機制，該機制可減少場景樹的節點冗餘。</p><br />40723112 << <a href='40723112.html'>Previous</a> <a href='40723148.html'>Next</a> >> 40723148</div>
         
     <!-- footer -->
       <div class="container">

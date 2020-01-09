@@ -154,50 +154,35 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep<br /><h1>Webots Tutorial</h1>
-<p>Tutorial 1.</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/K14XjTF2Dtg" width="560"></iframe></p>
-<p><span>機器人以其最大速度移動一段時間，然後在輪子旋轉10弧度後停止</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-# create the Robot instance.
-robot = Robot()
-
-# get the motor devices
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-# set the target position of the motors
-leftMotor.setPosition(10.0)
-rightMotor.setPosition(10.0)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<p><span>輪子將以每秒1弧度的速度旋轉</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-MAX_SPEED = 6.28
-
-# create the Robot instance.
-robot = Robot()
-
-# get a handler to the motors and set target position to infinity (speed control)
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-leftMotor.setPosition(float('inf'))
-rightMotor.setPosition(float('inf'))
-
-# set up the motor speeds at 10% of the MAX_SPEED.
-leftMotor.setVelocity(0.1 * MAX_SPEED)
-rightMotor.setVelocity(0.1 * MAX_SPEED)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<div><span></span></div>
-<br />Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep</div>
+    <div id="tipue_search_content">40723120 << <a href='40723120.html'>Previous</a> <br /><h1>40723146</h1>
+<p>建立節點</p>
+<p>現在，我們將關注節點和馬達，大多數時候，我們知道每個關節的準確的位置和方向，在這種情況下，我們只需使用按下<span>[</span>菜單欄<span>-&gt;</span>添加<span>-&gt;</span>關節<span>-&gt; ...]</span>來添加關節，然後我們可以使用“位置”欄和“方向”欄更改其位置和方向。在其他情況下，我們只有<span> D-H</span>矩陣（即<span>D-H</span>）參數，在這種情況下，我們可以透過模型瀏覽器中位於<span>Models / tools / Denavit-Hartenberg joint creator.ttm</span>中的工具模型來構建關節，</p>
+<p>但在其他的狀況下，我們不清楚關節位置和他的方向。所以，我們需要從導入的網格中提取它們。讓我們假設這是我們目前的情況。不用處理修改過的，更近似的網格，而是打開一個新情景，然後再次導入原始<span>CAD</span>數據。大多數時候，我們可以從最初的網格中提取網格或它的基本形狀，第一步是細分原始網格，如果不起作用，我們將經由三角形編輯模式來進行操作。讓我們假設我們現在可以細分原始的網格，我們現在可以觀察更小的物件，我們正在尋找迴轉形狀，它可以用作在其位置創建節點並以相同方向來參考。首先，刪除所有不需要的物件，有時在多個打開的場景中工作也很有幫助，它可以便於可視化和操作，在我們的案例中，我們首先注意機器人的底座：它包含一個圓柱體，該圓柱體的第一個節點的位置正確。在三角形編輯模式下，我們有：</p>
+<p><img alt="" height="245" src="https://s40723146.github.io/cad2019/images/T1.jpg" width="300"/></p>
+<p>[Robot base: normal and triangle edit mode visualization]</p>
+<p>我們通過頁面選擇器工具欄按鈕來更改攝影機的視角，為了從側面來查看物件。<span>fit-to-view</span>工具欄按鈕可以派上用場，可用來正確地框束物件的版本。然後，我們切換到<span>vertex edit</span>模式，並選擇屬於圓盤上的所有頂點。記住我們可以通過打開<span>/</span>關閉某些層，我們可以隱藏場景中的其他物件。然後，我們切換回三角形編輯模式：</p>
+<p><img alt="" height="185" src="https://s40723146.github.io/cad2019/images/T2.jpg" width="300"/></p>
+<p>[Selected upper disc, vertex edit mode (1 &amp; 2), triangle edit mode (3)]</p>
+<p>現在，我們單擊“提取圓柱體”（在這種情況下，“提取形狀”也將起作用），這只是在場景中創建了圓柱體形狀，而這個場景是根據所選定的三角形我們離開編輯模式並放棄修改物件，現在我們新增一個旋轉節點，<span>[</span>菜單欄<span>-&gt;</span>新增<span>-&gt;</span>節點<span>-&gt;</span>旋轉<span>]</span>，然後讓它保持被選擇的狀態，並控制提取圓柱體的形狀在位置框的“位置”選項上，我們點擊“<span>Apply to selection (</span>應用於選擇<span>)</span>”，這基本上將圓柱體的<span>x / y / z</span>的位置複製到節點，現在兩者的位置都相同。在<span>[</span>方向<span>]</span>選項上，我們也點擊“<span>Apply to selection(</span>應用於選擇<span>)</span>”：現在，我們選擇的物件方向也變成相同，有些時候，我們將需要圍繞其自身的參考範圍的旋轉節點增加約<span><span> </span>90/180</span>度，以獲得正確的方向或旋轉方向，如果需要，我們可以在該對話框的<span>[</span>旋轉<span>]</span>選項上執行此操作（在這種情況下，請不要忘記點擊“<span>Own frame(</span>自有框架<span>)</span>按鈕</p>
+<p><img alt="" height="305" src="https://s40723146.github.io/cad2019/images/T3.jpg" width="300"/></p>
+<p>[Joint in correct location, with the correct orientation]</p>
+<p>現在我們將節點複製回原始場景並保存<span>(</span>不要忘記定期存檔你的資料，復原<span>/</span>重做功能非常有用，但不能保護你免於其他災難的影響<span>)</span></p>
+<p>我們對機器人的所有節點都重複上面的過程，然後重新命名他們，我們還將所有節點和他們的屬性稍長一點，讓我們方便查看所有關節</p>
+<p>透過默認，將節點分配於可見圖層<span>2</span>，但可以在物件的公共屬性中對其進行修改，</p>
+<p>現在，我們將所有節點分配給可見圖層<span>10</span>，然後為場景臨時啟用可見圖層<span>10</span>，以使這些節點也可視化</p>
+<p>（默認情況下，僅激活場景的可見圖層<span>1-8</span>），這就是我們到目前為止的結果（模型<span>ResizableFloor_5_25</span>模型在模型屬性對話框中暫時不可見）：</p>
+<p><img alt="" height="237" src="https://s40723146.github.io/cad2019/images/T4.jpg" width="300"/></p>
+<p>[Joints in correct configuration]</p>
+<p>到這裡，我們可以開始建構模型層次的結構並完成它的定義，但是，如果我們想要可以動態啟用<span>OPUR</span>機器人，則還有一個額外的步驟</p>
+<h5>重點整理</h5>
+<p>建立節點<br/>Building the joints<br/>---------------------------------------------------------------<br/>知道每個關節的準確的位置和方向的情況<br/>know the exact position and orientation of each of the joints<br/><br/>1.[菜單欄-&gt;添加-&gt;節點-&gt; ...]來添加節點<br/>add the joints with [Menu bar --&gt; Add --&gt; Joints --&gt; ...]</p>
+<p>2.可以使用“位置”欄和“方向”欄更改其位置和方向<br/>we can change their position and orientation with the position dialog and orientation dialog.<br/><br/>3.透過模型瀏覽器中位於Models / tools / Denavit-Hartenberg joint creator.ttm中的工具模型來構建關節每個關節的準確的位置和方向<br/>we can build our joints via the tool model located in Models/tools/Denavit-Hartenberg joint creator.ttm, in the model browser.<br/>Othertimes, we have no information about the joint locations and orientations<br/>---------------------------------------------------------------<br/>不知道每個關節的準確的位置和方向的情況<br/>we have no information about the joint locations and orientations</p>
+<p>1.打開一個新情景，然後再次導入原始CAD數據<br/>we open a new scene, and import the original CAD data again</p>
+<p>2.細分原始網格，如果不起作用，我們將經由三角形編輯模式來進行操作。<br/>The first step is to subdivide the original mesh<br/>2-1.讓我們假設我們現在可以細分原始的網格<br/>Let's suppose that we could divide the original mesh</p>
+<p>3.刪除所有不需要的物件(只留下需要的零件 此段無翻譯)<br/>remove all objects that are not needed<br/>3-1.通過頁面選擇器工具欄按鈕來更改攝影機的視角<br/>We change the camera view via the page selector toolbar button<br/>3-2.為了從側面來查看物件。fit-to-view工具欄按鈕可以派上用場，可用來正確地框束物件的版本<br/>The fit-to-view toolbar button can come in handy to correctly frame the object in edition<br/>3-3.然後，我們切換到vertex edit模式，並選擇屬於圓盤上的所有頂點。記住我們可以通過打開/關閉某些層，我們可以隱藏場景中的其他物件。<br/>Then we switch to the vertex edit mode and select all vertices that belong to the upper disc. Remember that by switching some layers on/off,</p>
+<p>4.點擊“提取圓柱體”<br/>we click Extract cylinder<br/>4-1.我們離開編輯模式並放棄修改物件<br/>We leave the edit mode and discard the changes<br/>4-2.新增一個旋轉節點，[菜單欄-&gt;新增-&gt;節點-&gt;旋轉]，然後讓它保持被選擇的狀態，<br/>we add a revolute joint with [Menu bar --&gt; Add --&gt; Joint --&gt; Revolute], keep it selected<br/>4-3.並控制提取圓柱體的形狀在位置框的[位置]選項上，我們點擊“Apply to selection (應用於選擇)”<br/>In the position dialog, on the position tab, we click Apply to selection<br/>4-4.在[方向]選項上，我們也點擊“Apply to selection(應用於選擇)”<br/>In the orientation dialog, on the orientation tab, we also click Apply to selection:<br/>P.S:有些時候，我們將需要圍繞其自身的參考範圍的旋轉節點增加約 90/180度，以獲得正確的方向或旋轉方向<br/>Sometimes, we will need to additionally rotate the joint about 90/180 degrees around its own reference<br/>frame in order to obtain the correct orientation or rotation direction</p>
+<p>5. 在預設，節點分配於可見圖層2，但可以在物件的公共屬性中對其進行修改<br/>By defaut, joints will be assigned to visibility layer 2,<br/><br/>5-1.將所有節點分配給可見圖層10，然後為場景臨時啟用可見圖層10（默認情況下，僅激活場景的可見圖層1-8）<br/>We assign now all joints to visibility layer 10, then temporarily enable visibility layer 10 for the scene to also visualize those joints<br/>(by default, only visibility layers 1-8 are activated for the scene).</p>
+<p></p><br />40723120 << <a href='40723120.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

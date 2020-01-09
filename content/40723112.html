@@ -154,50 +154,18 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep<br /><h1>Webots Tutorial</h1>
-<p>Tutorial 1.</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/K14XjTF2Dtg" width="560"></iframe></p>
-<p><span>機器人以其最大速度移動一段時間，然後在輪子旋轉10弧度後停止</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-# create the Robot instance.
-robot = Robot()
-
-# get the motor devices
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-# set the target position of the motors
-leftMotor.setPosition(10.0)
-rightMotor.setPosition(10.0)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<p><span>輪子將以每秒1弧度的速度旋轉</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-MAX_SPEED = 6.28
-
-# create the Robot instance.
-robot = Robot()
-
-# get a handler to the motors and set target position to infinity (speed control)
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-leftMotor.setPosition(float('inf'))
-rightMotor.setPosition(float('inf'))
-
-# set up the motor speeds at 10% of the MAX_SPEED.
-leftMotor.setVelocity(0.1 * MAX_SPEED)
-rightMotor.setVelocity(0.1 * MAX_SPEED)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<div><span></span></div>
-<br />Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep</div>
+    <div id="tipue_search_content">40723110 << <a href='40723110.html'>Previous</a> <a href='40723136.html'>Next</a> >> 40723136<br /><h1>40723112</h1>
+<h4><span>Create A Ball</span>(創建一個球)</h4>
+<p><strong><span>Hands-on #4:</span></strong><span><span> </span>In the scene tree view, select the last node and press the Add button. In the dialog, open the Bases nodes section and select the Solid node. In the scene tree view, expand the Solid node and select its children field. Add a Shape node to it by using the Add button. Select the appearance field of the Shape node and use the Add button to add a PBRAppearance node.</span></p>
+<p><span>1.Add a Sphere node as the geometry field of the newly created Shape node.</span><br/><span>2.Expand the PBRAppearance node and change its metalness field to 0 and its roughness field to 1.</span><br/><span>3.Add another Sphere node to the boundingObject field of the Solid.</span><br/><span>4.Finally add a Physics node to the physics field of the Solid.</span><br/><span>5.By modifying the translation field of the Solid node, place the ball in front of the robot (at {0, 0.2, -0.2} for example).</span><br/><span>6.Save the simulation.</span><br/><span>7.The result is depicted in this figure.</span></p>
+<p></p>
+<p>步驟#4:在場景視圖中，選擇最後一個節點並且按"ADD"鈕，在對話框裡打開"基礎"節點(Bases nodes)，接著選擇"實體"節點(Solid node)。</p>
+<p>在場景視圖中，展開"實體"節點(Solid node)，然後選擇子字段(children field)，按"ADD"新增一個"形狀"節點，選擇形狀節點中的外觀字段，<br/>接著按"ADD" 鈕 新增一個"PBRAppearance"節點。</p>
+<p>1.新增一個球體節點(Sphere node)作為新建的形狀節點的幾何字段。<br/>2.展開PBRAppearance節點，並且將金屬字段設定0，接著粗糙度字段設定1。<br/>3.新建另一個球體節點(Sphere node)，並添加到實體的 boundingObject 字段。<br/>4.最後，新增一個Physics節點到實體中的Physical字段。<br/>5.修該時體節點的平移字段，把球放在機器人面前(例如:在座標[0,0.2,-0.2])。<br/>6.儲存模擬。<br/>7.結果如圖所示。</p>
+<p><img alt="" height="845" src="./../images/tutorial_ball.png" width="1485"/></p>
+<h4><br/><span>Geometries</span>(幾何形狀)</h4>
+<p><strong><span>Hands-on #5:</span></strong><span><span> </span>For each Sphere node defining the ball, set its radius field to 0.05 and its subdivision field to 2. Refer to the Reference Manual to understand what the subdivision field stands for.</span></p>
+<p>步驟#5:定義每個球體節點，將半徑字段設置為0.05，並且把細分(subdivision)字段設定為2，請查閱《參考手冊》了解細分字段的意義。</p><br />40723110 << <a href='40723110.html'>Previous</a> <a href='40723136.html'>Next</a> >> 40723136</div>
         
     <!-- footer -->
       <div class="container">

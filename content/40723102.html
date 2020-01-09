@@ -154,50 +154,50 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep<br /><h1>Webots Tutorial</h1>
-<p>Tutorial 1.</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/K14XjTF2Dtg" width="560"></iframe></p>
-<p><span>機器人以其最大速度移動一段時間，然後在輪子旋轉10弧度後停止</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-# create the Robot instance.
-robot = Robot()
-
-# get the motor devices
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-# set the target position of the motors
-leftMotor.setPosition(10.0)
-rightMotor.setPosition(10.0)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<p><span>輪子將以每秒1弧度的速度旋轉</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-MAX_SPEED = 6.28
-
-# create the Robot instance.
-robot = Robot()
-
-# get a handler to the motors and set target position to infinity (speed control)
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-leftMotor.setPosition(float('inf'))
-rightMotor.setPosition(float('inf'))
-
-# set up the motor speeds at 10% of the MAX_SPEED.
-leftMotor.setVelocity(0.1 * MAX_SPEED)
-rightMotor.setVelocity(0.1 * MAX_SPEED)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<div><span></span></div>
-<br />Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep</div>
+    <div id="tipue_search_content">CoppeliaSimPro << <a href='CoppeliaSimPro.html'>Previous</a> <a href='40723115.html'>Next</a> >> 40723115<br /><h1>40723102</h1>
+<p><strong><a href="http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm">http://www.coppeliarobotics.com/helpFiles/en/buildingAModelTutorial.htm</a></strong></p>
+<p><strong>第四段型號定義</strong></p>
+<p>現在我們準備定義模型了。我們首先構建模型層次結構：我們附加了最後一個動態機器人鏈接 (<em>robot_link_dyn6</em>) ，到其對應的關節(<em>robot_joint6</em>) ，選擇<span> (</span><em>robot_link_dyn6</em>) 然後控制選擇<span>(</span><em>robot_joint6</em>) , 之後然後點擊<span>[</span>菜單欄<span>-&gt;</span>編輯<span>-&gt;</span>將最後選擇的對象設為主對象<span>]</span>。</p>
+<p>我們也可以藉由簡單地將對象<span>robot_link_dyn6</span>拖動到場景層次中的<span>robot_link6</span>上完成此步驟。</p>
+<p>現在，我們將<span>robot_joint6</span>附加到<span>robot_link_dyn5</span>上，依此類推，直到到達機器人的底部。</p>
+<p>現在，我們具有以下場景層次結構：</p>
+<p> <img alt="" height="405" src="https://s40723102.github.io/cad2019/images/WINWORD_ufiBirVK2N.png" width="241"/></p>
+<p>為模型起一個簡單的名字是很好而且更合乎邏輯的，因為模型庫也將代表模型本身。所以我們命名這個機械手臂為<em>robot_visibleBase</em>,<span> </span><em>robot_dyn</em>。</p>
+<p>現在我們選擇層次樹的基礎(i.e. object <em>robot</em>)，在對象的公共屬性中，我們啟用物體是模型</p>
+<p>我們還使物體<span>/</span>模型可以轉移或接受<span>DNA</span>。</p>
+<p> </p>
+<p><strong>不顯示為內部模型</strong></p>
+<p>模型邊界框可以包含整個機器人。但是如果邊界框太大，邊界框還包含不可見的項目<span>(</span>例如<span>:</span>節點<span>)</span><span> </span>。這時候可以對所有節點啟用“不顯示為內部模型”<span> </span><strong>Don't show as inside model selection</strong>選擇項，將節點從模型邊界框中排除。我們可以對模型中的所有不可見項執行上述的步驟。這也是一個有用的選項，可以將大型傳感器或其他項目也排除在模型邊界框之外。</p>
+<p> <img alt="" height="220" src="https://s40723102.github.io/cad2019/images/WINWORD_XWiwPNkEg5.png" width="552"/></p>
+<p><strong>避免模型遭意外修改</strong></p>
+<p>保護我們的模型遭意外修改，選擇機器人中所有可見的對象，然後啟用<span>“ </span><strong>選擇模型的基礎<span>”</span></strong><span> </span><strong>Select base of model instead</strong>：如果現在點擊場景中的可見鏈接，則會改為選擇機器人的基座。這時候我們可以像對待單個物體一樣操作模型。我們仍然可以通過按住<span>Shift</span>鍵並單擊場景來選擇機器人中的可見物件，或在場景層次結構中選擇物件。</p>
+<p>我們將機器人置於正確的默認位置<span>/</span>方向。首先，我們將當前場景儲存做為參考（例如，需要在當前機器人上導入具有相同方向的<span>CAD</span>數據）。</p>
+<p>然後我們選擇模型並適當修改其位置<span>/</span>方向</p>
+<p>養成習慣將模型（即其基礎對象）放置在<span>X = 0</span>和<span>Y = 0</span>處。</p>
+<p><img alt="" height="385" src="https://s40723102.github.io/cad2019/images/WINWORD_1ivDbhxCBq.png" width="514"/></p>
+<p><strong>模擬</strong></p>
+<p>現在我們進行模擬，由於默認情況下節點不受控制，因此機器人將崩壞。</p>
+<p>在第三段添加節點時，我們以力<span>/</span>扭矩模式創建了節點，但其馬達或控制器已禁用情況下（默認情況下）。可以根據需要調整關節，在我們的案例中，我們希望為每個控制器都提供一個簡單的<span>PID</span>控制器。在關節動態屬性中，單擊“啟用電機”並調整最大扭矩。然後，單擊啟用控制環 <strong>Control loop enabled</strong> ，然後選擇位置控制（<span>PID</span>）<strong>Position control (PID)</strong>。</p>
+<p>我們再次模擬，則機器人應保持其位置</p>
+<p>嘗試切換當前的物理引擎，以查看行為在所有受支持的物理引擎之間是否一致。您可以通過相應的工具欄按鈕 toolbar button,或在常規動力學屬性中 general dynamics properties執行此操作。在模擬過程我們通過“ Dynamic content visualization、<span>verification toolbar button.</span>”工具欄按鈕來驗證場景動態內容。現在，將僅顯示物理引擎考慮的項目，並且該使用顏色區分。</p>
+<p>此操作非常重要，尤其是在動態模型無法按預期運行時，為了快速調整模型。同樣，在模擬過程中請始終注意場景層次：動態啟用的對象應在其名稱的右側顯示一個球形圖示。</p>
+<p><img alt="" height="335" src="https://s40723102.github.io/cad2019/images/WINWORD_67ZjgkEj5y.png" width="424"/></p>
+<p>最後，我們需要準備機器人，以便我們可以輕鬆地將抓取器連接到它，或輕鬆地將機器人連接到移動平台。可以透過以下兩種不同的方式</p>
+<p>1.<strong>by grouping them</strong><strong>將它們分組；選擇形狀</strong>然後</p>
+<p><span>[Menu bar</span><span>菜單欄</span><span> </span>--&gt; Edit<span>編輯<span>-</span></span><span> </span>--&gt; Grouping/Merging<span>分組<span>/</span>合併</span><span> </span>--&gt; Group selected shapes<span>對選定形狀進行分組</span>].</p>
+<p><strong>2.by attaching them via a force/torque sensor(</strong><strong>通過力<span>/</span>扭矩傳感器連接它們<span>)</span></strong>: 力扭矩傳感器還可以兩個單獨的動態啟用形狀之間的剛性鏈接。</p>
+<p>只有選項<span>2</span>是有意義的。我們建一個力<span>/</span>扭矩傳感器 [Menu bar菜單欄 --&gt; Add 添加<span>-</span>--&gt; Force sensor力傳感器]，然後將其移動到機器人的尖端，然後將其附加到對象<span>robot_link_dyn6</span>。我們會適當地更改其尺寸和外觀（紅色力<span>/</span>扭矩傳感器通常被視為可選的連接點，請檢查可用的各種機器人型號）。我們將其名稱更改為<span>robot_attachment</span>：</p>
+<p><img alt="" height="436" src="https://s40723102.github.io/cad2019/images/WINWORD_0R2BklucZI.png" width="552"/></p>
+<p>現在，我們將手臂夾持器模型拖拉到場景中，使其保持選中狀態，然後按住<span>Control</span>鍵並點擊附著力傳感器，然後點擊“ Assembling裝配/disassembling拆卸 ”工具欄按鈕。</p>
+<p>夾持器到位：</p>
+<p><img alt="" height="271" src="https://s40723102.github.io/cad2019/images/WINWORD_E9fDUnBXqu.png" width="412"/></p>
+<p>夾持器會自己連結，因為它在模型定義期間進行了適當的配置。</p>
+<p>現在，我們還需要正確配置機器人模型，以便它將知道如何將自己加到移動基座上。我們選擇機器人模型，然後在對象公共屬性中<span>(</span> object common properties)點擊“組裝”。為“<strong>Parent</strong><strong>主</strong>項”配置一個空字串，然後點擊設置<strong>模型，這將記住當前基礎對象的局部轉換模型，並使用它相對於移動機器人的附著點定位<span>/</span>定向。</strong></p>
+<p> </p>
+<p>為了驗證我們做的正確，我們拖動模型<em>Models/robots/mobile/KUKA Omnirob.ttm</em><em>進來，然後，我們選擇機器人模型，然後在移動平台上按住<span>Control</span>鍵並點擊其中一個附接點，然後單擊“組裝<span>Assembling/</span>拆卸<span>disassemblin</span>”工具欄按鈕。我們的機器人應該正確地將自己放置在移動機器人的頂部：</em></p>
+<p><em><img alt="" height="408" src="https://s40723102.github.io/cad2019/images/WINWORD_glU52n31w1.png" width="266"/> </em></p>
+<p>現在，我們可以向機器人添加其他項目，例如傳感器。</p>
+<p>在某些時候，我們可能還希望將嵌入式腳本附加到我們的模型中，以便控制其行為或出於各種目的對其進行配置。在這種情況下，一定要了解項目如何從嵌入的腳本查看。我們還可以從 <a href="http://www.coppeliarobotics.com/helpFiles/en/plugins.htm">plugin</a>、 <a href="http://www.coppeliarobotics.com/helpFiles/en/remoteApiOverview.htm">remote API</a> client、<span>from a </span><a href="http://www.coppeliarobotics.com/helpFiles/en/rosInterfaces.htm">ROS</a> node、<span> </span><a href="http://www.coppeliarobotics.com/helpFiles/en/blueZeroPlugin.htm">BlueZero</a> node、<a href="http://www.coppeliarobotics.com/helpFiles/en/addOns.htm">add-on</a>，control控制<span>/access</span>訪問<span>/interface</span>模型。確保我們已還原在機械手和夾具的安裝過程中所做的更改， 我們折疊機器人模型的層次樹，選擇模型的基礎，然後使用<span>[</span>菜單欄<span>Menu bar-&gt;</span>文件<span>File-&gt;</span>將模型另存為<span>Save model as]</span>保存。</p><br />CoppeliaSimPro << <a href='CoppeliaSimPro.html'>Previous</a> <a href='40723115.html'>Next</a> >> 40723115</div>
         
     <!-- footer -->
       <div class="container">

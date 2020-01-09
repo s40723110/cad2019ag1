@@ -1,0 +1,201 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>CMSiMDE</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+
+<!-- 啟用 LaTeX equations 編輯 -->
+<script src="https://scrum-3.github.io/web/math/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript"></script>
+<script type="text/javascript">
+init_mathjax = function() {
+    if (window.MathJax) {
+        // MathJax loaded
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+            },
+            displayAlign: 'left', // Change this to 'center' to center equations.
+            "HTML-CSS": {
+                styles: {'.MathJax_Display': {"margin": 0}}
+            }
+        });
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+}
+init_mathjax();
+</script>
+
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>cad2019ag-1</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">cad2019ag-1</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='每周任務.html'>每周任務</a><ul class='dropdown'><li><a href='Week10.html'>Week10</a><li class='has-children'><a href='Week12 應力分析.html'>Week12 應力分析</a><ul class='dropdown'><li><a href='第八章.html'>第八章</a></li></li></ul></ul><li class='has-children'><a href='模擬.html'>模擬</a><ul class='dropdown'><li class='has-children'><a href='Webots.html'>Webots</a><ul class='dropdown'><li><a href='Webots Tutorial.html'>Webots Tutorial</a></li></ul><li><a href='V-rep.html'>V-rep</a></li></ul><li class='has-children'><a href='繪圖程式類別.html'>繪圖程式類別</a><ul class='dropdown'><li class='has-children'><a href='Inventor 2019.html'>Inventor 2019</a><ul class='dropdown'><li><a href='繪圖認證.html'>繪圖認證</a></li></ul><li class='has-children'><a href='NX12.html'>NX12</a><ul class='dropdown'><li><a href='CHAPTER 1 – INTRODUCTION.html'>CHAPTER 1 – INTRODUCTION</a><li><a href='CHAPTER 2 – GETTING STARTED.html'>CHAPTER 2 – GETTING STARTED</a><li><a href='CHAPTER 3 – TWO DIMENSIONAL SKETCHING.html'>CHAPTER 3 – TWO DIMENSIONAL SKETCHING</a><li><a href='Stress Analysis.html'>Stress Analysis</a></li></ul><li><a href='Solidworks.html'>Solidworks</a><li><a href='Creo 6.0.html'>Creo 6.0</a><li><a href='Onshape.html'>Onshape</a></li></ul><li class='has-children'><a href='W17協同任務.html'>W17協同任務</a><ul class='dropdown'><li class='has-children'><a href='Webots  W17.html'>Webots  W17</a><ul class='dropdown'><li><a href='40723110.html'>40723110</a><li><a href='40723112.html'>40723112</a><li><a href='40723136.html'>40723136</a><li><a href='40723148.html'>40723148</a></li></ul><li class='has-children'><a href='CoppeliaSimPro.html'>CoppeliaSimPro</a><ul class='dropdown'><li><a href='40723102.html'>40723102</a><li><a href='40723115.html'>40723115</a><li><a href='40723120.html'>40723120</a><li><a href='40723146.html'>40723146</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">40723102 << <a href='40723102.html'>Previous</a> <a href='40723120.html'>Next</a> >> 40723120<br /><h1>40723115</h1>
+<p>Building the dynamic shapes If we want our robot to be dynamically enabled, i.e. react to collisions, fall, etc., then we need to create/configure the shapes appropriately: a shape can be: dynamic or static: a dynamic (or non-static) shape will fall and be influences by external forces/torques. A static (or non-dynamic) shape on the other hand, will stay in place, or follow the movement of its parent in the scene hierarchy. respondable or non-respondable: a respondable shape will cause a collision reaction with other respondable shapes. They (and/or) their collider, will be influenced in their movement if they are dynamic. On the other hand, non-respondable shapes will not compute a collision response if they collide with other shapes. Above two points are illustrated here. Respondable shapes should be as simple as possible, in order to allow for a fast and stable simulation. A physics engine will be able to simulate following 5 types of shapes with various degrees of speed and stability: Pure shapes: a pure shape will be stable and handled very efficiently by the physics engine. The draw-back is that pure shapes are limited in geometry: mostly cuboids, cylinders and spheres. If possible, use those for items that are in contact with other items for a longer time (e.g. the feet of a humanoid robot, the base of a serial manipulator, the fingers of a gripper, etc.). Pure shapes can be created with [Menu bar --&gt; Add --&gt; Primitive shape]. Pure compound shapes: a pure compound shape is a grouping of several pure shapes. It performs almost as well as pure shapes and shares similar properties. Pure compound shapes can be generated by grouping several pure shapes [Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; Group selected shapes]. Convex shapes: a convex shape will be a little bit less stable and take a little bit more computation time when handled by the physics engine. It allows for a more general geometry (only requirement: it need to be convex) than pure shapes. If possible, use convex shapes for items that are sporadically in contact with other items (e.g. the various links of a robot). Convex shapes can be generated with [Menu bar --&gt; Add --&gt; Convex hull of selection] or with [Menu bar --&gt; Edit --&gt; Morph selection into convex shapes]. Compound convex shapes, or convex decomposed shapes: a convex decomposed shape is a grouping of several convex shapes. It performs almost as well as convex shapes and shares similar properties. Convex decomposed shapes can be generated by grouping several convex shapes [Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; Group selected shapes], with [Menu bar --&gt; Add --&gt; Convex decomposition of selection...], or with [Menu bar --&gt; Edit --&gt; Morph selection into its convex decomposition...]. Random shapes: a random shape is a shape that is not convex nor pure. It generally has poor performance (calculation speed and stability). Avoid using random shapes as much as possible. So the order of preference would be: pure shapes, pure compound shapes, convex shapes, compound convex shapes, and finally random shapes. Make sure to also read this page. In case of the robot we want to build, we will make the base of the robot as a pure cylinder, and the other links as convex or convex decomposed shapes. We could use the dynamically enabled shapes also as the visible parts of the robot, but that would probably not look good enough. So instead, we will build for each visible shape we have created in the first part of the tutorial a dynamically enabled counterpart, which we will keep hidden: the hidden part will represent the dynamic model and be exclusively used by the physics engine, while the visible part will be used for visualization, but also for minimum distance calculations, proximity sensor detections, etc. We select object robot, copy-and-paste it into a new scene (in order to keep the original model intact) and start the triangle edit mode. If object robot was a compound shape, we would first have had to ungroup it ([Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; Ungroup selected shapes]) then merge the individual shapes ([Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; Merge selected shapes]) before being able to start the triangle edit mode. Now we select the few triangles that represent the power cable, and erase them. Then we select all triangles in that shape, and click Extract cylinder. We can now leave the edit mode and we have our base object represented as a pure cylinder: [Pure cylinder generation procedure, in the triangle edit mode] We rename the new shape (with a double-click on its name in the scene hierarchy) as robot_dyn, assign it to visibility layer 9, then copy it to the original scene. The rest of the links will be modelled as convex shapes, or compound convex shapes. We now select the first mobile link (i.e. object robot_link1) and generate a convex shape from it with [Menu bar --&gt; Add --&gt; Convex hull of selection]. We rename it to robot_link_dyn1 and assign it to visibility layer 9. When extracting the convex hull doesn't retain enough details of the original shape, then you could still manually extract several convex hulls from its composing elements, then group all the convex hulls with [Menu bar --&gt; Edit --&gt; Grouping/Merging --&gt; Group selected shapes]. If that appears to be problematic or time consuming, then you can automatically extract a convex decomposed shape with [Menu bar --&gt; Add --&gt; Convex decomposition of selection...]: [Original shape, and convex shape pendant] [Original shape, and convex decomposed shape pendant] We now repeat the same procedure for all remaining robot links. Once that is done, we attach each visible shape to its corresponding invisible dynamic pendant. We do this by selecting first the visible shape, then via control-click selecting its dynamic pendant then [Menu bar --&gt; Edit --&gt; Make last selected object parent]. The same result can be achieved by dragging the visible shape onto its dynamic pendant in the scene hierarchy: [Visible shapes attached to their dynamic pendants] We still need to take care of a few things: first, since we want the dynamic shapes only visible to the physics engine, but not to the other calculation modules, we uncheck all object special properties for the dynamic shapes, in the object common properties. Then, we still have to configure the dynamic shapes as dynamic and respondable. We do this in the shape dynamics properties. Select first the base dynamic shape (i.e. robot_dyn), then check the Body is respondable item. Enable the first 4 Local respondable mask flags, and disable the last 4 Local respondable mask flags: it is important for consecutive respondable links not to collide with each other. For the first mobile dynamic link in our robot (i.e. robot_link_dyn1), we also enable the Body is respondable item, but this time we disable the first 4 Local respondable mask flags, and enable the last 4 Local respondable mask flags. We repeat the above procedure with all other dynamic links, while always alternating the Local respondable mask flags: once the model will be defined, consecutive dynamic shapes of the robot will not generate any collision response when interacting with each other. Try to always end up with a construction where the dynamic base of the robot, and the dynamic last link of the robot have only the first 4 Local respondable mask flags enabled, so that we can attach the robot to a mobile platform, or attach a gripper to the last dynamic link of the robot without dynamic collision interferences. Finally, we still need to tag our dynamic shapes as Body is dynamic. We do this also in the shape dynamics properties. We can then enter the mass and inertia tensor properties manually, or have those values automatically computed (recommended) by clicking Compute mass &amp; inertia properties for selected convex shapes. Remember also this and that dynamic design considerations. This dynamic base of the robot is a special case: most of the time we want the base of the robot (i.e. robot_dyn) to be non-dynamic (i.e. static), otherwise, if used alone, the robot might fall during movement. But as soon as we attach the base of the robot to a mobile platform, we want the base to become dynamic (i.e. non-static). We do this by enabling the Set to dynamic if gets parent item, then disabling the Body is dynamic item. Now run the simulation: all dynamic shapes, except for the base of the robot, should fall. That attached visual shapes will follow their dynamic pendants.</p>
+<p>建構動態形狀 如果想要讓我們的機器人啟用動態,換句話說對碰撞跌倒做出反應, 那麼我們需要適當地創建/配置形狀：形狀可以是： • 動態或靜態: 動態(或非靜態)，形狀會變形並受到外力或是扭矩的影響。 另一方面，靜態(或非靜態)行裝會保持不變，或在場景的層次結構中跟著母體做動 •合理和不合理:一個合理的形狀會與其他合理的形狀造成碰撞反應. 如果他們是動態的狀況下，他們將受到影響. 換句話說, 不合理的形狀與其他形狀發生碰撞，則不會產生碰撞反應。 以上說明的兩點。合理的形狀盡可能簡化，以實現快速且穩定的仿真。物理引擎將能夠以不同的速度和穩定性模擬以下5種類型的形狀： •純形狀: 純形狀在物理引擎是穩定且有效的運行， 但缺點是純形狀得幾何形狀受到限制:主要是長方體、圓柱體和球體。 如果可能的話，將其用於與其他物品接觸時間較長的物品（例如，人形機器人的腳，串行機械手的底座，抓手的手指等）。可以使用[菜單欄-&gt;添加-&gt;基本形狀]創建純形狀。 • 純複合形狀: 純複合形狀是幾個純形狀的組合。它的性能幾乎與純形狀一樣，並具有相似的特性。可以通過對幾個純形狀進行分組來生成純複合形狀[菜單欄-&gt;編輯-&gt;分組/合併-&gt;分組所選形狀]。 • 凸形狀: 當由物理引擎處理時，凸形的穩定性會降低一些，並且會花費更多的計算時間。與純形狀相比，它允許使用更通用的幾何形狀（僅要求：它必須是凸形的）。如果可能，將凸形用於偶爾與其他物品接觸的物品（例如，機器人的各個鏈接）。可以使用[菜單欄-&gt;添加-&gt;選擇的凸包]或[菜單欄-&gt;編輯-&gt;將選擇變形為凸形]生成凸形。 • 複合凸形狀或凸分解形狀：凸分解形狀是幾個凸形狀的組合。它的性能幾乎與凸形相同，並具有相似的特性。可以通過將多個凸形分組[菜單欄-&gt;編輯-&gt;分組/合併-&gt;分組選定的形狀]，並使用[菜單欄-&gt;添加-&gt;選擇的凸分解...]來生成凸分解形狀。 ]，或使用[菜單欄-&gt;編輯-&gt;將選擇變形到其凸分解...]。 • 不規則形狀: 不規則形狀是既非凸形也不是純淨的形狀。它通常具有較差的性能（計算速度和穩定性）。盡量避免使用隨機形狀。 因此，優先順序為：純形狀，純複合形狀，凸形，複合凸形，最後是隨機形狀。確保還閱讀此頁面。對於要構建的機器人，我們將其基座設為純圓柱體，將其他鏈接設為凸形或凸形分解形狀。 我們也可以將動態啟用的形狀用作機器人的可見部分，但是看起來可能不夠好。因此，相反，我們將為在本教程第一部分中創建的每個可見形狀構建一個動態啟用的副本，該副本將保持隱藏狀態：隱藏部分將代表動態模型，並由物理引擎專用，而可見部分將用於可視化，還用於最小距離計算，接近傳感器檢測等。 我們選擇對像機器人，將其複制並粘貼到新場景中（以保持原始模型不變），然後啟動三角形編輯模式。如果對像機器人是複合形狀，我們首先必須將其取消組合（[菜單欄-&gt;編輯-&gt;分組/合併-&gt;取消組合所選形狀]），然後合併各個形狀（[菜單欄-&gt;在啟動三角形編輯模式之前，請編輯-&gt;分組/合併-&gt;合併選定的形狀]）。現在，我們選擇代表電源線的幾個三角形，並將其刪除。然後我們選擇該形狀中的所有三角形，然後單擊“提取” 圓筒。現在我們可以離開編輯模式，我們的基礎對象表示為純圓柱體： 我們將新形狀重命名（在場景層次中雙擊其名稱）為robot_dyn，將其分配給可見性層9，然後將其複製到原始場景。其餘鏈接將建模為凸形或複合凸形。現在，我們選擇第一個移動鏈接（即對象robot_link1），並使用[菜單欄-&gt;添加-&gt;選擇的凸包]從中生成凸形。我們將其重命名為robot_link_dyn1並將其分配給可見性層9。當提取凸包並沒有保留足夠的原始形狀細節時，您仍然可以手動從其組成元素中提取多個凸包，然後將所有凸包與[菜單欄-&gt;編輯-&gt;分組/合併-&gt;對選定形狀進行分組]。如果這似乎有問題或很耗時，則可以使用[菜單欄-&gt;添加-&gt;選擇的凸分解...]自動提取凸分解的形狀： 現在，我們對所有剩餘的機器人鏈接重複相同的過程。完成後，我們將每個可見的形狀附加到其相應的不可見的動態吊墜上。為此，我們先選擇可見的形狀，然後按住Control鍵並單擊以選擇其動態吊墜，然後選擇[菜單欄-&gt;編輯-&gt;將最後選擇的對象設為父對象]。通過將可見形狀拖動到場景層次中的動態吊墜上，可以實現相同的結果： 我們仍然需要注意一些事項：首先，由於我們希望動態形狀僅對物理引擎可見，而對其他計算模塊不可見，因此在對象通用屬性中取消選中動態形狀的所有對象特殊屬性。 。 然後，我們仍然必須將動態形狀配置為動態且可響應的。我們在形狀動力學屬性中執行此操作。首先選擇基本動態形狀（即robot_dyn），然後檢查“主體是可響應的”項。啟用前四個“本地可響應掩碼”標誌，並禁用後四個“本地可響應掩碼”標誌：對於連續的可響應鏈接不要彼此衝突非常重要。對於我們機器人中的第一個移動動態鏈接（即robot_link_dyn1），我們還啟用了“身體可響應”項，但是這次我們禁用了前4個“本地可響應掩碼”標誌，並啟用了後4個“本地可響應掩碼”標誌。我們對所有其他動態鏈接重複上述過程，同時始終交替使用Local Responsible Mask標誌：一旦定義了模型，則連續的機器人動態形狀在彼此交互時不會產生任何碰撞響應。嘗試始終以這樣一種構造結束：機器人的動態基礎和機器人的動態最後一個鏈接僅啟用了前4個“本地可響應掩碼”標誌，以便我們可以將機器人附加到移動平台，或附加一個抓取器連接到機器人的最後一個動態鏈接，而沒有動態碰撞干擾。 最後，我們仍然需要將動態形狀標記為“身體是動態的”。我們也在形狀動力學屬性中執行此操作。然後，我們可以手動輸入質量和慣性張量屬性，或者通過單擊“計算選定凸形的質量和慣性屬性”來自動計算（推薦）那些值。還請記住這一點以及該動態設計注意事項。機器人的這種動態基座是一種特殊情況：大多數時候，我們希望機器人的基座（即robot_dyn）是非動態的（即靜態），否則，如果單獨使用，則機器人可能會在運動過程中掉落。但是，一旦我們將機器人的底座連接到移動平台上，我們就希望底座變得動態（即非靜態）。我們通過啟用“如果獲取父項時設置為動態”項，然後禁用“主體為動態”項來做到這一點。現在運行仿真：除了機器人的基座之外，所有動態形狀都應下降。附加的視覺形狀將跟隨其動態吊墜。</p><br />40723102 << <a href='40723102.html'>Previous</a> <a href='40723120.html'>Next</a> >> 40723120</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        </body></html>
+        

@@ -154,50 +154,22 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep<br /><h1>Webots Tutorial</h1>
-<p>Tutorial 1.</p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/K14XjTF2Dtg" width="560"></iframe></p>
-<p><span>機器人以其最大速度移動一段時間，然後在輪子旋轉10弧度後停止</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-# create the Robot instance.
-robot = Robot()
-
-# get the motor devices
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-# set the target position of the motors
-leftMotor.setPosition(10.0)
-rightMotor.setPosition(10.0)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<p><span>輪子將以每秒1弧度的速度旋轉</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">from controller import Robot, Motor
-
-TIME_STEP = 64
-
-MAX_SPEED = 6.28
-
-# create the Robot instance.
-robot = Robot()
-
-# get a handler to the motors and set target position to infinity (speed control)
-leftMotor = robot.getMotor('left wheel motor')
-rightMotor = robot.getMotor('right wheel motor')
-leftMotor.setPosition(float('inf'))
-rightMotor.setPosition(float('inf'))
-
-# set up the motor speeds at 10% of the MAX_SPEED.
-leftMotor.setVelocity(0.1 * MAX_SPEED)
-rightMotor.setVelocity(0.1 * MAX_SPEED)
-
-while robot.step(TIME_STEP) != -1:
-   pass</pre>
-<div><span></span></div>
-<br />Webots << <a href='Webots.html'>Previous</a> <a href='V-rep.html'>Next</a> >> V-rep</div>
+    <div id="tipue_search_content">Webots  W17 << <a href='Webots  W17.html'>Previous</a> <a href='40723112.html'>Next</a> >> 40723112<br /><h1>40723110</h1>
+<p>DEF-USE Mechanism</p>
+<p>定義使用原理</p>
+<p><strong><span>Hands-on #6:</span></strong><span> </span><span>Select the first Sphere node (the child of the Shape) in the scene tree view.</span><br/><span>The field editor of the scene tree view allows you to enter the DEF string.</span></p>
+<p>動手操作6 : 在左邊場景列中選擇第一個Sphere模型(Shape的次級模型)。<br/>點選場景列中的 field editor，這裡可以讓你輸入指令。</p>
+<p></p>
+<p>1.Enter BALL_GEOMETRY in this field.<br/>第一步 : 輸入 BALL_GEOMETRY<br/>2.Select the boundingObject field (containing the second Sphere node), and empty it by right clicking the field in the scene tree and choosing the Delete entry in the context menu that pops up.<br/>第二步 : 選擇boundingObject(包含第二個的Sphere模型)，然後點擊右鍵選擇刪除<br/>3.Then, select the boundingObject field and click on the Add button, and select the USE / BALL_GEOMETRY in the dialog box.<br/>第三步 : 然後選擇 boundingObject ，點選添加後在對話中選擇 USE / BALL_GEOMETRY<br/>4.The result is shown in this figure.</p>
+<p><span>結果如圖所示</span></p>
+<p></p>
+<p><img alt="" height="842" src="./../images/tutorial_def_use.png" width="1479"/></p>
+<p><img alt="" height="301" src="./../images/node2.jpg" width="421"/></p>
+<p><span><span><strong>Hands-on #7</strong>:</span><span> </span>Create a second ball with the same parameters but using the <a href="https://cyberbotics.com/doc/reference/shape">Shape</a> node (rather than the <a href="https://cyberbotics.com/doc/reference/sphere">Sphere</a></span><span><span> node directly) for the DEF-USE mechanism</span>.</span></p>
+<p><span>使用DEF-USE機制的Shape節點（不是直接使用Sphere節點）新建第二個有相同參數的球</span></p>
+<h4><strong>Add Walls</strong><br/><strong>添置牆壁</strong></h4>
+<p>In order to verify your progression, implement by yourself four walls to surround the environment.<br/>為了確認你的進度，請自己在環境中設置四道牆。<br/>The walls have to be defined statically to the environment. Understand the difference between static and dynamic<br/>必須根據環境的條件去定義牆壁，並區分動態與靜態的區別。</p>
+<p><br/><strong><span>Hands-on #8:</span></strong><span><span> </span>Add four walls without physics and using only one definition of the Shape node.</span><br/>僅使用形狀的定義去添加牆壁</p><br />Webots  W17 << <a href='Webots  W17.html'>Previous</a> <a href='40723112.html'>Next</a> >> 40723112</div>
         
     <!-- footer -->
       <div class="container">
